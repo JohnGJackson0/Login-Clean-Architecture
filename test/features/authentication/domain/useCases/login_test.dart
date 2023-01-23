@@ -23,7 +23,8 @@ void main() {
   });
 
   test('it should get the token when authenticated successfully', () async {
-    final result = await useCase(email: 'mockEmail', password: 'mockPassword');
+    final result = await useCase(
+        const Params(email: 'mockEmail', password: 'mockPassword'));
     expect(result, const Right(User(authToken: 'mockAuthToken')));
     verify(() => authenticationRepository.login(
         email: 'mockEmail', password: 'mockPassword')).called(1);
