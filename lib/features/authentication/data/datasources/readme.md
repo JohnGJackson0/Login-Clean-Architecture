@@ -1,0 +1,10 @@
+We are using custom AWS authorizer functions and user pool setup. 
+
+Here is an example of a request that needs to be authorized. We must get the accessToken, a JWT that authorizes other API requests. Otherise the api would return an error response as Unauthorized.
+
+
+  curl --location --request POST 'https://6dw00r4dye.execute-api.us-east-1.amazonaws.com/lambdaauth' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: eyJraWQiOiJBVWtrM2pwVTY3aWMwa3RFckgzYmtGSFVuSVJkZ2owcHV5eFBrUVd2U21FPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI0ZTI2MmQ5OC0wMWY3LTQ4NzUtOWE0Ny0xNWQ0MjNhODVkYWEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV8xOWNZWjhrWDkiLCJ2ZXJzaW9uIjoyLCJjbGllbnRfaWQiOiJxZjNvajRqa3A5cDFhZ2Nua2Rtbm03Z2JqIiwiZXZlbnRfaWQiOiJiYmU3NTBmNS0wMzYyLTQzM2EtYmYwNS1mZGE4ZTExMWJlZjAiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6InBob25lIG9wZW5pZCBlbWFpbCIsImF1dGhfdGltZSI6MTY3NDQ3NzE1MCwiZXhwIjoxNjc0NDgwNzUwLCJpYXQiOjE2NzQ0NzcxNTAsImp0aSI6IjMxOGUzYWQ5LWJjZjgtNGI4OS1hZTNmLWRiYWI2YWYxZGMzMiIsInVzZXJuYW1lIjoiNGUyNjJkOTgtMDFmNy00ODc1LTlhNDctMTVkNDIzYTg1ZGFhIn0.4fkBOkC4ZPRGRZrwm9BQeikCKQWGFt5oay18UusLo1PgCYenquM3ada53veqcjlMqdCX-zV_aS32ozxQjV7uI6lp-jge2kVw5asscxwRKcLJsk2ZAEQth54pxEHn1mywUeG-4cmKXIkUghNH6CVu_66hR_DreWIsN_DbY9mFX-xT2K1ZHIMo-pgE7Zu18ij70uCXYQK-8t1qTJbbWnh9wpLSFNKjr8oNkgaECILfytOblhzU8X_8-S4tX1P-qafdds6wohdDp9gNevKi414vlO3UKqsUITIYlRg5EEgaPECJNNXke3ArQ-NtjXJGq6My9wgm8LND914NLoAzqaqmLw' \
+  --data-raw ''
+  '''
